@@ -1,5 +1,5 @@
 # ReCapProject - Araba Kiralama Sistemi
-- ReCapProject Entities, DataAccess, Business ve ConsoleUI katmanlarından oluşan bir "Araba Kiralama Sistemi" adlı C# projesidir. 
+- ReCapProject Entities, DataAccess, Business ve ConsoleUI katmanlarından oluşan "Araba Kiralama Sistemi" adlı bir C# projesidir. 
 - Şuan için 3 farklı nesne (Car, Color ve Brand) ve operasyonlarından oluşan bu proje zaman içerisinde geliştirilecektir.
 - Proje hakkındaki detayları zaman içerisinde [blog sayfamda](https://www.hasanbaskin.com) paylaşacağım. 
 
