@@ -4,6 +4,7 @@ using DataAccess.Concrete;
 using Entities.Concrete;
 using Business.Abstract;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 
 namespace ConsoleUI
 {
@@ -11,46 +12,21 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            //Araba tanımla
+            Car car1 = new Car {Id=6, BrandId=1, ColorId=7, DailyPrice= 800, Description="Yeni eklenen araç", ModelYear=2010 };                   
+            
+            CarManager carManager = new CarManager(new EfCarDal());
+            //Yeni araba ekle
+            carManager.Add(car1);
 
-            CarManager carManager = new CarManager(new InMemoryCarDal());
-            Console.WriteLine("-----Başlangıç Listesi------");
+            Console.WriteLine("----------------------------\n");
             foreach (var car in carManager.GetAll())
             {
                 Console.WriteLine(car.Id + " - " + car.Description);
             }
 
 
-            //ARAÇ EKLE
-            carManager.Add(new Car { Id = 7, BrandId = 17, ColorId = 17, DailyPrice = 77777, Description = "Ford Ranger", ModelYear = 2021 });
-            Console.WriteLine("\n------Araç Ekleme Sonrası Liste--------");
-            foreach (var car in carManager.GetAll())
-            {
-                Console.WriteLine(car.Id + " - " + car.Description);
-            }
-
-
-            //ID NO İLE ARAÇ GÖSTER
-            Console.WriteLine("\n-----ID No ile Göster-----");
-            Car car1= carManager.GetById(4);
-            Console.WriteLine(car1.Id + " ID Nolu Araç: " + car1.Description);
-
-
-            //ARAÇ SİLME
-            carManager.Delete(4);
-            Console.WriteLine("\n-------Silme İşlemi Sonrası Liste------");
-            foreach (var car in carManager.GetAll())
-            {
-                Console.WriteLine(car.Id + " - " + car.Description);
-            }
-
-
-            //ARAÇ GÜNCELLEME
-            carManager.Update(new Car { Id = 1, BrandId = 1, DailyPrice = 1700, ColorId = 5, ModelYear = 2018, Description = "Subaru Impreza" });
-            Console.WriteLine("\n-----Güncelleme Sonrası Araç Listesi-------");
-            foreach (var car in carManager.GetAll())
-            {
-                Console.WriteLine(car.Id + " - " + car.Description);
-            }
+            
 
         }
     }
