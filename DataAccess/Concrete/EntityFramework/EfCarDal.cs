@@ -3,60 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal : ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, MydbContext>, ICarDal
     {
-        public void Add(Car entity)
-        {
-            using (MydbContext context=new MydbContext())
-            {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
-            }
-        }
+        public List<CarDetailDto> GetProductDetails()
+        {            
 
-        public void Delete(Car entity)
-        {
             using (MydbContext context = new MydbContext())
             {
-                var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
-            }
-        }
+                var result = from ca in context.Cars
+                             join br in context.Brands
+                             on ca.BrandId equals br.BrandId
+                             join co in context.Colors
+                             on ca.ColorId equals co.ColorId
+                             select new CarDetailDto
+                             {                                 
+                                 BrandId = br.BrandId,
+                                 BrandName = br.BrandName,
+                                 ColorId = co.ColorId,
+                                 ColorName = co.ColorName,                                 
+                                 Id = ca.Id,
+                                 CarName = ca.carName,
+                                 Description = ca.Description,
+                                 ModelYear = ca.ModelYear,
+                                 DailyPrice = ca.DailyPrice
+                             };
+                return result.ToList();
 
-        public Car Get(Expression<Func<Car, bool>> filter)
-        {
-            using (MydbContext context=new MydbContext())
-            {
-                return context.Set<Car>().SingleOrDefault(filter);
             }
-        }
 
-        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
-        {
-            using (MydbContext context=new MydbContext())
-            {
-                return filter == null 
-                    ? context.Set<Car>().ToList() 
-                    : context.Set<Car>().Where(filter).ToList();
-            }
-        }
-
-        public void Update(Car entity)
-        {
-            using (MydbContext context = new MydbContext())
-            {
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
-                context.SaveChanges();
-            }
         }
     }
 }

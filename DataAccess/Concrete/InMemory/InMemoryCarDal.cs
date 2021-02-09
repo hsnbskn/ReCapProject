@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace DataAccess.Concrete
 {
@@ -60,6 +61,11 @@ namespace DataAccess.Concrete
         public Car GetById(int id)
         {
             return _cars.SingleOrDefault(c => c.Id == id);
+        }
+
+        public List<CarDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)
