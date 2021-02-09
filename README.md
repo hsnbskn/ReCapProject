@@ -15,7 +15,7 @@
 
 ### Output
 
-![Image](https://i.hizliresim.com/8wyFSc.pngg)
+![Image](https://i.hizliresim.com/8wyFSc.png)
 
 ### Program Files
 
