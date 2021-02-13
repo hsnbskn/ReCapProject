@@ -5,6 +5,7 @@ using Entities.Concrete;
 using Business.Abstract;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using System.Linq;
 
 namespace ConsoleUI
 {
@@ -12,10 +13,40 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //CarAddTest();
-            //BrandTest();
-            DetailsTest();
+            //CarAddTest();            
+            //DetailsTest();
+            //UserAddTest();
+            //CustomerAddTest();
 
+            RentalAddTest();
+
+        }
+
+        private static void RentalAddTest()
+        {
+            Rental rental2 = new Rental { CarId = 3, CustomerId = 2, RentDate = DateTime.Now};
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+
+            rentalManager.Add(rental2);
+        }
+
+        private static void CustomerAddTest()
+        {
+            Customer customer2 = new Customer { UserId = 2, CompanyName = "X-Bilişim" };
+
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            customerManager.Add(customer2);
+
+            
+        }
+
+        private static void UserAddTest()
+        {
+            User user2 = new User { FirstName = "Alparslan", LastName = "Beyazıt", Password = "deneme132", Email = "alparslan@gmail.com" };
+
+            UserManager userManager = new UserManager(new EfUserDal());
+
+            userManager.Add(user2);
         }
 
         private static void DetailsTest()
@@ -38,15 +69,7 @@ namespace ConsoleUI
             
         }
 
-        private static void BrandTest()
-        {
-            BrandManager brandManager = new BrandManager(new EfBrandDal());
-
-            foreach (var brand in brandManager.GetAll())
-            {
-                Console.WriteLine(brand.BrandName);
-            }
-        }
+       
 
         private static void CarAddTest()
         {
