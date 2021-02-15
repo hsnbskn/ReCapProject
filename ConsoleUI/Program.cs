@@ -17,17 +17,24 @@ namespace ConsoleUI
             //DetailsTest();
             //UserAddTest();
             //CustomerAddTest();
-
             RentalAddTest();
+            //RentalUpdateTest();
 
+        }
+
+        private static void RentalUpdateTest()
+        {
+            Rental rental1 = new Rental { CarId = 3, CustomerId = 2, ReturnDate = DateTime.Now };
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            rentalManager.Update(rental1);
         }
 
         private static void RentalAddTest()
         {
-            Rental rental2 = new Rental { CarId = 3, CustomerId = 2, RentDate = DateTime.Now};
+            Rental rental3 = new Rental { CarId = 3, CustomerId = 1, RentDate = DateTime.Now};
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
-
-            rentalManager.Add(rental2);
+                        
+            Console.WriteLine(rentalManager.Add(rental3).Message);
         }
 
         private static void CustomerAddTest()

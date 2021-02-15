@@ -20,20 +20,21 @@ namespace Business.Constants
         public static string RentalDeleted = "Rental Deleted";
         public static string RentalUpdated = "Rental Updated";
         public static string ReturnDateNotNull = "The car has already been delivered";
-        internal static string CustomerAdded = "Customer added";
-        internal static string CustomerDeleted = "Customer Deleted";
-        internal static string CustomerListed = "Customer Listed";
-        internal static string CustomerUpdated = "Customer updated";
-        internal static string CarDeleted = "Car Deleted";
-        internal static string CarUpdated = "Car updated";
-        internal static string BrandAdded = "Brand added";
-        internal static string BrandDeleted = "Brand deleted";
-        internal static string BrandUpdated = "Brand updated";
-        internal static string BrandListed = "Brand listed";
-        internal static string BrandListedById = "Brand listed by Brand Id ";
-        internal static string ColorAdded = "Color added";
-        internal static string ColorDeleted = "Color deleted";
-        internal static string ColorUpdated = "Color updated";
-        internal static string ColorListed = "Color listed";
+        public static string CustomerAdded = "Customer added";
+        public static string CustomerDeleted = "Customer Deleted";
+        public static string CustomerListed = "Customer Listed";
+        public static string CustomerUpdated = "Customer updated";
+        public static string CarDeleted = "Car Deleted";
+        public static string CarUpdated = "Car updated";
+        public static string BrandAdded = "Brand added";
+        public static string BrandDeleted = "Brand deleted";
+        public static string BrandUpdated = "Brand updated";
+        public static string BrandListed = "Brand listed";
+        public static string BrandListedById = "Brand listed by Brand Id ";
+        public static string ColorAdded = "Color added";
+        public static string ColorDeleted = "Color deleted";
+        public static string ColorUpdated = "Color updated";
+        public static string ColorListed = "Color listed";
+        public static string RentalListed = "Rental listed";
     }
 }
