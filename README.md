@@ -71,7 +71,7 @@
 ##### Constants Klasörü
 - [Messages.cs](https://github.com/hsnbskn/ReCapProject/blob/master/Business/Constants/Messages.cs) 
 
-#### **Core Katmanı**
+### **Core Katmanı**
 - **Core Katmanı asla başka bir katmana bağımlı olamaz! Tamamen bağımsızdır.**
 - Bu katmanda ortak kodlar yer almaktadır. Projenin kurumsal bir yapıya sahip olmasını sağlar.
 - Diğer katmanlar **Core** katmanına bağımlıdır ve referans alırlar.
@@ -100,7 +100,7 @@
     - [SuccessDataResult.cs](https://github.com/hsnbskn/ReCapProject/blob/master/Core/Utilities/Results/SuccessDataResult.cs)
     - [SuccessResult.cs](https://github.com/hsnbskn/ReCapProject/blob/master/Core/Utilities/Results/SuccessResult.cs) 
 
-#### **WebAPI Layer**
+### **WebAPI Katmanı**
 - Proje servislerine farklı yazılımlar, uygulamalar ve cihazlar üzerinden erişim imkanı sağlar.
 - Bu aşamada yazılan kodlar **Postman** Aracı ile test edilmiştir.
 - Controllers dosyasında yer alan class'ların amacı client tarafından server'a yapılan istekleri karşılamak ve çalıştırılacak olan servise karar vermektir.
