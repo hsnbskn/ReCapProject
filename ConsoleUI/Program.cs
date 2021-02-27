@@ -17,7 +17,7 @@ namespace ConsoleUI
             //DetailsTest();
             //UserAddTest();
             //CustomerAddTest();
-            RentalAddTest();
+            //RentalAddTest();
             //RentalUpdateTest();
 
         }
@@ -58,7 +58,7 @@ namespace ConsoleUI
 
         private static void DetailsTest()
         {
-            CarManager carManager = new CarManager(new EfCarDal());
+            CarManager carManager = new CarManager(new EfCarDal(), new BrandManager(new EfBrandDal()));
 
             var result = carManager.GetCarDetails();
 
@@ -83,7 +83,7 @@ namespace ConsoleUI
             //Araba tanımla
             Car car1 = new Car { Id = 6, BrandId = 1, ColorId = 7, DailyPrice = 800, Description = "Yeni eklenen araç", ModelYear = 2010 };
 
-            CarManager carManager = new CarManager(new EfCarDal());
+            CarManager carManager = new CarManager(new EfCarDal(), new BrandManager(new EfBrandDal()));
             //Yeni araba ekle
             carManager.Add(car1);
 

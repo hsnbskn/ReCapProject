@@ -36,5 +36,10 @@ namespace Business.Constants
         public static string ColorUpdated = "Color updated";
         public static string ColorListed = "Color listed";
         public static string RentalListed = "Rental listed";
+        public static string CarCountOfBrandError = "Bu markada en fazla 10 adet araç olabilir";
+        public static string CarNameAlreadyExists = "Bu isimde zaten bir araç var";
+        public static string BrandLimitExceded = "Marka limitine ulaşıldığı için yeni araç eklenemiyor";
+        public static string ErrorAddedImageLimit = "En fazla 5 fotoğraf eklenebilir";
+        internal static string CarImageLimitExceeded;
     }
 }
