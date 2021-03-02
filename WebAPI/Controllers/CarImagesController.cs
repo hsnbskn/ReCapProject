@@ -31,7 +31,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpDelete("delete")]
+        [HttpPost("delete")]
         public IActionResult Delete([FromForm(Name = ("Id"))] int Id)
         {
 

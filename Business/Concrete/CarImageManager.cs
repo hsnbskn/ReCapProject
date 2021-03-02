@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Business.Concrete
 {
-    class CarImageManager : ICarImageService
+    public class CarImageManager : ICarImageService
     {
         ICarImageDal _carImageDAL;
 
@@ -23,6 +23,7 @@ namespace Business.Concrete
         {
             _carImageDAL = carImageDAL;
         }
+
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
         {
@@ -36,6 +37,7 @@ namespace Business.Concrete
             _carImageDAL.Add(carImage);
             return new SuccessResult();
         }
+
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Delete(CarImage carImage)
         {
@@ -79,7 +81,7 @@ namespace Business.Concrete
         }
         private List<CarImage> CheckIfCarImageNull(int id)
         {
-            string path = @"\Images\logo.jpg";
+            string path = @"\Images\default.jpg";
             var result = _carImageDAL.GetAll(c => c.CarId == id).Any();
             if (!result)
             {
