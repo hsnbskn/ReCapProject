@@ -6,6 +6,7 @@ using Business.Abstract;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using System.Linq;
+using Core.Entities.Concrete;
 
 namespace ConsoleUI
 {
@@ -47,14 +48,14 @@ namespace ConsoleUI
             
         }
 
-        private static void UserAddTest()
-        {
-            User user2 = new User { FirstName = "Alparslan", LastName = "Beyazıt", Password = "deneme132", Email = "alparslan@gmail.com" };
+        //private static void UserAddTest()
+        //{
+        //    User user2 = new User { FirstName = "Alparslan", LastName = "Beyazıt", Password = "deneme132", Email = "alparslan@gmail.com" };
 
-            UserManager userManager = new UserManager(new EfUserDal());
+        //    UserManager userManager = new UserManager(new EfUserDal());
 
-            userManager.Add(user2);
-        }
+        //    userManager.Add(user2);
+        //}
 
         private static void DetailsTest()
         {
