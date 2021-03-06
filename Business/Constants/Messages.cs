@@ -42,7 +42,7 @@ namespace Business.Constants
         public static string CarNameAlreadyExists = "Bu isimde zaten bir araç var";
         public static string BrandLimitExceded = "Marka limitine ulaşıldığı için yeni araç eklenemiyor";
         public static string ErrorAddedImageLimit = "En fazla 5 fotoğraf eklenebilir";
-        public static string CarImageLimitExceeded;
+        public static string CarImageLimitExceeded = "Daha fazla resim eklenemez";
         public static string AuthorizationDenied = "Yetkiniz yok";
         public static string UserRegistered = "Kullanıcı kaydedildi";
         public static string UserNotFound = "Kullanıcı bulunamadı";
